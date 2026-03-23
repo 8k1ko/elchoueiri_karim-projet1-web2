@@ -1,1 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ascension - Gym d'escalade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <!-- =================================
+  HEADER / NAVIGATION
+  barre du haut avec logo, menu et bouton orange
+  ================================= -->
+  <header class="header">
+    <div class="header__container">
+      <nav class="nav">
+
+        <div class="nav__brand">
+          <div class="nav__logo">logo hero</div>
+          <p class="nav__brand-name">Ascension</p>
+        </div>
+
+        <ul class="nav__menu">
+          <li class="nav__item"><a class="nav__link" href="#about">À propos</a></li>
+          <li class="nav__item"><a class="nav__link" href="#services">Services</a></li>
+          <li class="nav__item"><a class="nav__link" href="#schedule">Horaires</a></li>
+          <li class="nav__item"><a class="nav__link" href="#testimonials">Témoignages</a></li>
+          <li class="nav__item"><a class="nav__link" href="#team">Équipe</a></li>
+          <li class="nav__item"><a class="nav__link" href="#pricing">Tarifs</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+
+        <a class="nav__button" href="#contact">Venez grimper</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =================================
+  HERO
+  grosse image remplacée pour l’instant par un fond + bloc visuel
+  ================================= -->
+  <section class="hero">
+    <div class="hero__overlay"></div>
+
+    <div class="hero__container">
+      <div class="hero__content">
+        <h1 class="hero__title">Bienvenue à<br>l’Ascension</h1>
+        <p class="hero__text">
+          Découvrez notre passion pour l’escalade.<br>
+          Grimpez comme les pros!
+        </p>
+
+        <div class="hero__actions">
+          <a class="hero__button hero__button--ghost" href="#about">En savoir plus</a>
+          <a class="hero__button hero__button--accent" href="#contact">Rejoignez-nous</a>
+        </div>
+      </div>
+
+      <div class="hero__graphic">
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================
+  A PROPOS
+  titre + intro + deux cartes
+  ================================= -->
+  <section class="about" id="about">
+    <div class="about__container">
+
+      <div class="section-head section-head--center">
+        <h2 class="section-head__title section-head__title--dark">À propos de nous</h2>
+        <p class="section-head__text">Notre gym est un espace dédié aux grimpeurs de tous niveaux.</p>
+      </div>
+
+      <div class="about__cards">
+
+        <article class="about-card">
+          <div class="about-card__image"></div>
+
+          <div class="about-card__body">
+            <h3 class="about-card__title">Notre Mission</h3>
+            <p class="about-card__text">
+              Fournir un environnement sûr et
+              stimulant pour l’escalade.
+            </p>
+            <p class="about-card__meta">🟠 L’équipe de l’Ascension</p>
+          </div>
+        </article>
+
+        <article class="about-card">
+          <div class="about-card__image"></div>
+
+          <div class="about-card__body">
+            <h3 class="about-card__title">Nous Croyons</h3>
+            <p class="about-card__text">
+              Que l’escalade est pour tout le
+              monde, peu importe l’âge ou le
+              niveau.
+            </p>
+            <p class="about-card__meta">🟠 L’équipe de l’Ascension</p>
+          </div>
+        </article>
+      </div>
+  </section>
+
+  <!-- =================================
+  SERVICES
+  fond bleu foncé + bouton orange + 3 cartes
+  ================================= -->
+  <section class="services" id="services">
+    <div class="services__container">
+
+      <div class="section-head section-head--center">
+        <h2 class="section-head__title section-head__title--accent">Nos services</h2>
+        <a class="section-head__button" href="#pricing">Découvrez nos offres</a>
+      </div>
+
+      <div class="services__cards">
+
+        <article class="service-card">
+          <div class="service-card__image">Cours d’escalade</div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Cours d’Initiation</h3>
+            <p class="service-card__text">Un cours conçu pour les débutants.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__image">Escalade en bloc</div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Escalade en Bloc</h3>
+            <p class="service-card__text">Profitez de notre espace de bloc premium.</p>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card__image">Compétitions</div>
+          <div class="service-card__body">
+            <h3 class="service-card__title">Compétitions Mensuelles</h3>
+            <p class="service-card__text">Participez à nos compétitions amicales.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================
+  HORAIRES
+  6 petits blocs horaires
+  ================================= -->
+  <section class="schedule" id="schedule">
+    <div class="schedule__container">
+
+      <div class="section-head section-head--center">
+        <h2 class="section-head__title section-head__title--accent">Horaires</h2>
+        <p class="section-head__text">Consultez notre emploi du temps.</p>
+      </div>
+
+      <div class="schedule__list">
+        <article class="schedule-card">
+          <div class="schedule-card__icon">🕒</div>
+          <h3 class="schedule-card__day">Lundi</h3>
+          <p class="schedule-card__time">10h - 22h</p>
+        </article>
+
+        <article class="schedule-card">
+          <div class="schedule-card__icon">🕒</div>
+          <h3 class="schedule-card__day">Mardi</h3>
+          <p class="schedule-card__time">10h - 22h</p>
+        </article>
+
+        <article class="schedule-card">
+          <div class="schedule-card__icon">🕒</div>
+          <h3 class="schedule-card__day">Mercredi</h3>
+          <p class="schedule-card__time">10h - 22h</p>
+        </article>
+
+        <article class="schedule-card">
+          <div class="schedule-card__icon">🕒</div>
+          <h3 class="schedule-card__day">Jeudi</h3>
+          <p class="schedule-card__time">10h - 22h</p>
+        </article>
+
+        <article class="schedule-card">
+          <div class="schedule-card__icon">🕒</div>
+          <h3 class="schedule-card__day">Vendredi</h3>
+          <p class="schedule-card__time">10h - 23h</p>
+        </article>
+
+        <article class="schedule-card">
+          <div class="schedule-card__icon">🕒</div>
+          <h3 class="schedule-card__day">Samedi</h3>
+          <p class="schedule-card__time">10h - 21h</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================================
+  TEMOIGNAGES
+  titre à gauche + cartes à droite
+  ================================= -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials__container">
+
+      <div class="testimonials__intro">
+        <h2 class="testimonials__title">Témoignages</h2>
+      </div>
+
+      <div class="testimonials__cards">
+        <article class="testimonial-card">
+          <p class="testimonial-card__name">👤 Alice</p>
+          <p class="testimonial-card__text">C’est l’endroit parfait pour grimper!</p>
+        </article>
+
+        <article class="testimonial-card">
+          <p class="testimonial-card__name">👤 Bob</p>
+          <p class="testimonial-card__text">Ambiance incroyable et super équipe!</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =================================
+  EQUIPE
+  icone + texte + bouton
+  ================================= -->
+  <section class="team" id="team">
+    <div class="team__container">
+
+      <div class="team__left">
+        <div class="team__icon">👥</div>
+
+        <div class="team__content">
+          <h2 class="team__title">Rencontrez notre Équipe</h2>
+          <p class="team__text">Des professionnels passionnés prêts à vous aider.</p>
+        </div>
+      </div>
+
+      <a class="team__button" href="#contact">Voir les profils</a>
+    </div>
+  </section>
+
+  <!-- =================================
+  TARIFICATION
+  3 cartes prix
+  ================================= -->
+  <section class="pricing" id="pricing">
+    <div class="pricing__container">
+
+      <div class="section-head section-head--center">
+        <h2 class="section-head__title section-head__title--accent">Tarification</h2>
+        <p class="section-head__text">Choisissez le plan qui vous convient.</p>
+      </div>
+
+      <div class="pricing__cards">
+
+        <article class="pricing-card">
+          <div class="pricing-card__image"></div>
+          <div class="pricing-card__body">
+            <h3 class="pricing-card__title">Passe mensuelle</h3>
+            <p class="pricing-card__text">Accès illimité pour 50$.</p>
+          </div>
+        </article>
+
+        <article class="pricing-card">
+          <div class="pricing-card__image"></div>
+          <div class="pricing-card__body">
+            <h3 class="pricing-card__title">Passe étudiant</h3>
+            <p class="pricing-card__text">Accès illimité pour 35$.</p>
+          </div>
+        </article>
+
+        <article class="pricing-card">
+          <div class="pricing-card__image"></div>
+          <div class="pricing-card__body">
+            <h3 class="pricing-card__title">Passe d’une journée</h3>
+            <p class="pricing-card__text">Accès à la salle pour seulement 15$.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================
+  CONTACT
+  3 champs + bouton
+  ================================= -->
+  <section class="contact" id="contact">
+    <div class="contact__container">
+
+      <div class="section-head section-head--center">
+        <h2 class="section-head__title section-head__title--accent">Contactez-nous</h2>
+      </div>
+
+      <form class="contact__form">
+        <div class="contact__field">
+          <label class="contact__label" for="name">Nom</label>
+          <input class="contact__input" type="text" id="name" placeholder="Votre nom">
+        </div>
+
+        <div class="contact__field">
+          <label class="contact__label" for="email">Email</label>
+          <input class="contact__input" type="email" id="email" placeholder="Votre email">
+        </div>
+
+        <div class="contact__field">
+          <label class="contact__label" for="message">Message</label>
+          <input class="contact__input" type="text" id="message" placeholder="Votre message">
+        </div>
+
+        <div class="contact__actions">
+          <button class="contact__button" type="submit">Envoyer</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- =================================
+  FOOTER
+  liens + bloc action
+  ================================= -->
+  <footer class="footer">
+    <div class="footer__container">
+
+      <ul class="footer__links">
+        <li class="footer__item"><a class="footer__link" href="#about">À propos</a></li>
+        <li class="footer__item"><a class="footer__link" href="#pricing">Tarifs</a></li>
+        <li class="footer__item"><a class="footer__link" href="#schedule">Horaires</a></li>
+        <li class="footer__item"><a class="footer__link" href="#contact">Nous contacter</a></li>
+        <li class="footer__item"><a class="footer__link" href="#contact">Suivez-nous sur les réseaux sociaux!</a></li>
+      </ul>
+
+      <div class="footer__cta">
+        <p class="footer__cta-title">Venez grimper!</p>
+        <a class="footer__cta-button" href="#pricing">Obteniez une passe</a>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

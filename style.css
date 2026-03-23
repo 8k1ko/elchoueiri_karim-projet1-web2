@@ -1,0 +1,883 @@
+/* =================================
+DESIGN TOKENS
+les variables globales du projet
+================================= */
+
+:root {
+  --color-navy: #17144d;
+  --color-navy-2: #141046;
+  --color-accent: #eea24a;
+  --color-accent-dark: #db8f36;
+  --color-white: #ffffff;
+  --color-bg-light: #f5f4f2;
+  --color-bg-soft: #ece7e1;
+  --color-card-soft: #dcdbe8;
+  --color-border: #e3ddd8;
+  --color-text-dark: #201d41;
+  --color-text-soft: #5a5673;
+
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 5rem;
+
+  --radius-sm: 0.2rem;
+  --radius-md: 0.45rem;
+
+  --container-width: min(1200px, calc(100% - 1rem));
+  --section-padding: clamp(3rem, 8vw, 6rem);
+
+  --font-main: Georgia, "Times New Roman", serif;
+  --font-ui: Arial, Helvetica, sans-serif;
+}
+
+/* =================================
+BASE
+la base clean du site
+================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-dark);
+  font-family: var(--font-main);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* =================================
+SECTION HEAD
+petit composant réutilisable pour les titres
+Structure HTML:
+.section-head
+.section-head__title
+.section-head__text
+.section-head__button
+================================= */
+
+.section-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.section-head--center {
+  align-items: center;
+  text-align: center;
+}
+
+.section-head__title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.section-head__title--dark {
+  color: var(--color-text-dark);
+}
+
+.section-head__title--accent {
+  color: var(--color-accent);
+}
+
+.section-head__text {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: clamp(0.9rem, 1.7vw, 1rem);
+}
+
+.section-head__button {
+  margin-top: var(--space-md);
+  min-height: 2.6rem;
+  padding: 0 calc(var(--space-lg) + 0.15rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* =================================
+HEADER / NAVIGATION
+barre du haut
+Structure HTML:
+.header
+.header__container
+.nav
+.nav__brand
+.nav__logo
+.nav__brand-name
+.nav__menu
+.nav__link
+.nav__button
+================================= */
+
+.header {
+  background-color: var(--color-navy);
+  border-top: 3px solid #2584ea;
+}
+
+.header__container {
+  width: var(--container-width);
+  margin: 0 auto;
+}
+
+.nav {
+  min-height: 3.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.nav__logo {
+  min-width: 4.5rem;
+  min-height: 1.4rem;
+  padding: 0 var(--space-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2584ea;
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  border-radius: 0.1rem;
+}
+
+.nav__brand-name {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 1.15rem;
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.55rem, 1.3vw, 1.1rem);
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.nav__link {
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+}
+
+.nav__button {
+  min-height: 1.9rem;
+  padding: 0 var(--space-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-radius: 0.1rem;
+  font-family: var(--font-ui);
+  font-size: 0.64rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* =================================
+HERO
+bloc principal avec la vraie image en fond
+Structure HTML:
+.hero
+.hero__overlay
+.hero__container
+.hero__content
+.hero__title
+.hero__text
+.hero__actions
+.hero__button
+================================= */
+
+.hero {
+  position: relative;
+  min-height: 31rem;
+  background-image:
+    linear-gradient(rgba(14, 10, 52, 0.50), rgba(14, 10, 52, 0.50)),
+    url("hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid #2584ea;
+  overflow: hidden;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 7, 37, 0.58) 0%, rgba(10, 7, 37, 0.12) 100%);
+}
+
+.hero__container {
+  position: relative;
+  z-index: 1;
+  width: var(--container-width);
+  min-height: 31rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.hero__content {
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.hero__title {
+  margin: 0;
+  color: var(--color-white);
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  line-height: 1.02;
+}
+
+.hero__text {
+  margin: 0;
+  color: #f4f2f1;
+  font-size: clamp(0.92rem, 1.8vw, 1.02rem);
+  line-height: 1.55;
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-sm);
+}
+
+.hero__button {
+  min-width: 9rem;
+  min-height: 2.5rem;
+  padding: 0 var(--space-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+}
+
+.hero__button--ghost {
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.hero__button--accent {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+}
+
+/* =================================
+A PROPOS
+section claire avec 2 cartes
+Structure HTML:
+.about
+.about__container
+.about__cards
+.about-card
+.about-card__image
+.about-card__body
+.about-card__title
+.about-card__text
+.about-card__meta
+================================= */
+
+.about {
+  padding: var(--section-padding) 0;
+  background-color: #f4f3f2;
+}
+
+.about__container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.about__cards {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.about-card {
+  width: min(25rem, 100%);
+  padding: var(--space-md);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  background-color: #faf9f8;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.about-card__image {
+  flex: 0 0 2.8rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: var(--color-card-soft);
+}
+
+.about-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.about-card__title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.about-card__text {
+  margin: 0;
+  color: var(--color-text-soft);
+  line-height: 1.45;
+  font-size: 0.88rem;
+}
+
+.about-card__meta {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: 0.76rem;
+}
+
+/* =================================
+SERVICES
+fond foncé avec 3 cartes
+Structure HTML:
+.services
+.services__container
+.services__cards
+.service-card
+.service-card__image
+.service-card__body
+.service-card__title
+.service-card__text
+================================= */
+
+.services {
+  padding: var(--section-padding) 0;
+  background-color: var(--color-navy);
+}
+
+.services__container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.services__cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.service-card {
+  width: min(17.8rem, 100%);
+  background-color: #f6f3ee;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card__image {
+  min-height: 15rem;
+  background-color: var(--color-card-soft);
+  color: #706987;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  text-align: center;
+  font-size: 0.72rem;
+}
+
+.service-card__body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.service-card__title {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.service-card__text {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+/* =================================
+HORAIRES
+liste flexible des horaires
+Structure HTML:
+.schedule
+.schedule__container
+.schedule__list
+.schedule-card
+.schedule-card__icon
+.schedule-card__day
+.schedule-card__time
+================================= */
+
+.schedule {
+  padding: var(--section-padding) 0;
+  background-color: #f7f6f5;
+}
+
+.schedule__container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.schedule__list {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.2rem, 4vw, 4rem);
+  row-gap: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.schedule-card {
+  width: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.schedule-card__icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background-color: var(--color-card-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-card__day {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.schedule-card__time {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: 0.92rem;
+}
+
+/* =================================
+TEMOIGNAGES
+titre à gauche et cartes à droite
+Structure HTML:
+.testimonials
+.testimonials__container
+.testimonials__intro
+.testimonials__title
+.testimonials__cards
+.testimonial-card
+.testimonial-card__name
+.testimonial-card__text
+================================= */
+
+.testimonials {
+  padding: clamp(2.5rem, 6vw, 4rem) 0;
+  background-color: var(--color-bg-soft);
+}
+
+.testimonials__container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.testimonials__title {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: clamp(2rem, 4vw, 2.7rem);
+}
+
+.testimonials__cards {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  width: 9rem;
+  min-height: 6.2rem;
+  padding: var(--space-sm);
+  background-color: var(--color-card-soft);
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.testimonial-card__name,
+.testimonial-card__text {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+/* =================================
+EQUIPE
+bande simple avec bouton foncé
+Structure HTML:
+.team
+.team__container
+.team__left
+.team__icon
+.team__content
+.team__title
+.team__text
+.team__button
+================================= */
+
+.team {
+  padding: clamp(2rem, 5vw, 3.2rem) 0;
+  background-color: #f7f6f5;
+  border-top: 1px solid #ece7df;
+  border-bottom: 1px solid #ece7df;
+}
+
+.team__container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.team__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.team__icon {
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  background-color: #e7e2dc;
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.team__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.team__title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.team__text {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: 0.9rem;
+}
+
+.team__button {
+  min-height: 2.3rem;
+  padding: 0 var(--space-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* =================================
+TARIFICATION
+3 cartes prix
+Structure HTML:
+.pricing
+.pricing__container
+.pricing__cards
+.pricing-card
+.pricing-card__image
+.pricing-card__body
+.pricing-card__title
+.pricing-card__text
+================================= */
+
+.pricing {
+  padding: var(--section-padding) 0;
+  background-color: #f1ede7;
+}
+
+.pricing__container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.pricing__cards {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  width: min(18rem, 100%);
+  padding: var(--space-md);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  background-color: #faf8f6;
+  border-radius: var(--radius-sm);
+}
+
+.pricing-card__image {
+  flex: 0 0 2.8rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: var(--color-card-soft);
+}
+
+.pricing-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.pricing-card__title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.pricing-card__text {
+  margin: 0;
+  color: var(--color-text-soft);
+  line-height: 1.45;
+  font-size: 0.88rem;
+}
+
+/* =================================
+CONTACT
+3 champs sur une ligne qui wrap
+Structure HTML:
+.contact
+.contact__container
+.contact__form
+.contact__field
+.contact__label
+.contact__input
+.contact__actions
+.contact__button
+================================= */
+
+.contact {
+  padding: var(--section-padding) 0;
+  background-color: #f7f6f5;
+}
+
+.contact__container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.contact__form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.contact__field {
+  width: min(10rem, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.contact__label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+}
+
+.contact__input {
+  width: 100%;
+  min-height: 1.7rem;
+  padding: 0 var(--space-sm);
+  border: 1px solid #ddd7d1;
+  border-radius: 0.15rem;
+  background-color: transparent;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+}
+
+.contact__actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+.contact__button {
+  min-width: 8rem;
+  min-height: 2.1rem;
+  padding: 0 var(--space-xl);
+  border: 0;
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+/* =================================
+FOOTER
+fond bleu + liens + bloc orange/blanc
+Structure HTML:
+.footer
+.footer__container
+.footer__links
+.footer__link
+.footer__cta
+.footer__cta-title
+.footer__cta-button
+================================= */
+
+.footer {
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  background-color: var(--color-navy);
+}
+
+.footer__container {
+  width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  flex-wrap: wrap;
+}
+
+.footer__link {
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+}
+
+.footer__cta {
+  padding: var(--space-sm);
+  background-color: #f8f3ec;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+.footer__cta-title {
+  margin: 0;
+  color: var(--color-text-dark);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.footer__cta-button {
+  min-height: 1.9rem;
+  padding: 0 var(--space-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-radius: 0.15rem;
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
