@@ -191,18 +191,33 @@ j’ai utilisé `background-image` dans le CSS
 
 ## 9. Utilisation de l’IA
 
-Outil : ChatGPT
-Version : GPT-5.3
-Date : (mets la date d’aujourd’hui)
+**Outil :** ChatGPT  
+**Version :** GPT-5.3  
 
-J’ai utilisé l’IA pour :
+J’ai utilisé l’IA pour m’aider à différents moments du projet :
 
-* corriger mes erreurs
-* comprendre certains concepts
-* améliorer mon CSS
+### Corriger des erreurs
+- CSS qui ne marchait pas (problème de lien avec le HTML)
+- menu mal aligné (les éléments se mettaient un en dessous de l’autre)
+- problèmes avec Flexbox
 
-Mais j’ai compris le code et je l’ai modifié moi-même.
+### Mieux comprendre
+- comment fonctionne Flexbox (alignement, espaces)
+- comment utiliser BEM pour nommer les classes
+- comment utiliser les variables CSS
+- comment utiliser `clamp()`, `min()` et `calc()`
 
+### Améliorer mon code
+- rendre le design plus propre
+- ajuster les espacements
+- améliorer les boutons
+- ajouter l’image du hero avec un overlay
+
+### Je n’ai pas juste copié le code.
+J’ai :
+- testé moi-même
+- modifié le code
+- compris ce que je faisais
 ---
 
 ## 10. Conclusion
